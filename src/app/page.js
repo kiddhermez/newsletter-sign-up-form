@@ -3,11 +3,15 @@
 import SignUp from '@/components/SignUp';
 import Success from '@/components/Success';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
     const [email, setEmail] = useState('');
-    const isMobile = window.innerWidth <= 768;
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth <= 768);
+    }, []);
 
     return (
         <main className='flex h-screen w-screen items-center justify-center bg-[--CharcoalGrey]'>
