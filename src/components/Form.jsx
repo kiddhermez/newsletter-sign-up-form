@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Submit from './Submit';
 
-const Form = (props) => {
+const Form = ({ setEmail }) => {
     const {
         register,
         formState: { errors },
@@ -10,7 +10,7 @@ const Form = (props) => {
     } = useForm();
 
     const onSubmit = (data) => {
-        props.setEmail(data.email);
+        setEmail(data.email);
     };
 
     return (
@@ -41,7 +41,7 @@ const Form = (props) => {
                     'border-[--Tomato] bg-[#FFE9E7] text-[--Tomato] placeholder:text-[--Tomato]'
                 }`}
             ></input>
-            <Submit key={1} text='Subscribe to monthly newsletter' />
+            <Submit text='Subscribe to monthly newsletter' />
         </form>
     );
 };

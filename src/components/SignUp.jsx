@@ -4,9 +4,7 @@ import Image from 'next/image';
 import Feature from './Feature';
 import Form from './Form';
 
-const SignUp = (props) => {
-    const isMobile = window.innerWidth <= 768;
-
+const SignUp = ({ setEmail, isMobile }) => {
     return (
         <>
             <section className='h-auto w-full overflow-hidden rounded-b-2xl md:grid md:h-[70vh] md:w-[50%] md:content-center md:justify-center md:rounded-2xl'>
@@ -27,7 +25,7 @@ const SignUp = (props) => {
                     <Feature text='Measuring to ensure updates are a success' />
                     <Feature text='And much more!' />
                 </div>
-                <Form setEmail={props.setEmail} />
+                <Form setEmail={setEmail} />
             </section>
         </>
     );

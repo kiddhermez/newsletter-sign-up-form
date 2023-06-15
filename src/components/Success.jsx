@@ -2,7 +2,7 @@ import SuccessIcon from '@/components/images/SuccessIcon';
 import Submit from './Submit';
 import { motion } from 'framer-motion';
 
-const Success = (props) => {
+const Success = ({ email }) => {
     return (
         <motion.div
             className='flex h-full flex-col justify-evenly gap-7 p-10'
@@ -13,14 +13,10 @@ const Success = (props) => {
             <SuccessIcon />
             <h1 className='text-5xl font-bold'>Thanks for subscribing!</h1>
             <p>
-                A confirmation has been sent to <b>{props.email}</b>. Please
-                open it and click the button inside to confirm your subscription
+                A confirmation has been sent to <b>{email}</b>. Please open it
+                and click the button inside to confirm your subscription
             </p>
-            <Submit
-                onClick={() => location.reload()}
-                text='Dimiss message'
-                key={1}
-            />
+            <Submit onClick={() => location.reload()} text='Dimiss message' />
         </motion.div>
     );
 };
